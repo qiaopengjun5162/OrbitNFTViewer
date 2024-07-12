@@ -39,7 +39,11 @@ export default defineConfig({
         },
         devSourcemap: true, // 配置是否生成 source map 文件索引
         postcss: {
-            plugins: [postcssPresetEnv()],
+            plugins: [
+                postcssPresetEnv(),
+                // require('tailwindcss'),
+                // require('autoprefixer'),
+            ],
         }
     },
     // 配置 alias

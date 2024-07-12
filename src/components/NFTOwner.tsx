@@ -43,7 +43,7 @@ const NFTOwner: React.FC = () => {
 
     return (
         <div>
-            <h2>NFT Owner Lookup</h2>
+            <h2 className="text-3xl font-bold underline">NFT Owner Lookup</h2>
             <div>
                 <label>
                     Token ID:
