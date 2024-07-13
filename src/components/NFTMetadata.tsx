@@ -14,28 +14,25 @@ if (!isAddress(contract_address)) {
 const contract = getContract({ address: contract_address, abi, client });
 
 // 获取区块号
-const blockNumber = await client.getBlockNumber();
+// const blockNumber = await client.getBlockNumber();
 
-// 获取合约名称、符号、总供应量、余额
-const [name, symbol, totalSupply, balance] = await Promise.all([
-    contract.read.name(),
-    contract.read.symbol(),
-    contract.read.totalSupply(),
-    contract.read.balanceOf([contract_address]),
-]);
+// // 获取合约名称、符号、总供应量、余额
+// const [name, symbol, totalSupply, balance] = await Promise.all([
+//     contract.read.name(),
+//     contract.read.symbol(),
+//     contract.read.totalSupply(),
+//     contract.read.balanceOf([contract_address]),
+// ]);
 
 // 获取合约余额
-const contract_balance = await client.getBalance({
-    address: contract_address,
-});
+// const contract_balance = await client.getBalance({
+//     address: contract_address,
+// });
 
-// 获取合约交易数量
-const transactionCount = await client.getTransactionCount({
-    address: contract_address,
-});
-
-// 获取合约日志
-const logs = await contract.getEvents.Transfer();
+// // 获取合约交易数量
+// const transactionCount = await client.getTransactionCount({
+//     address: contract_address,
+// });
 
 const NFTMetadata: React.FC = () => {
     const [tokenId, setTokenId] = useState<string>("");
@@ -61,21 +58,20 @@ const NFTMetadata: React.FC = () => {
         <div>
             <h2>NFT Metadata</h2>
             <div>
-                <p>Block Number: {blockNumber.toString()}</p>
+                {/* <p>Block Number: {blockNumber.toString()}</p> */}
 
-                <p className="text-slate-500">Name: {name}</p>
+                {/* <p className="text-slate-500">Name: {name}</p> */}
 
-                <p>Symbol: {symbol}</p>
+                {/* <p>Symbol: {symbol}</p> */}
 
-                <p>Total Supply: {totalSupply.toString()}</p>
+                {/* <p>Total Supply: {totalSupply.toString()}</p> */}
 
-                <p>Balance: {balance.toString()}</p>
+                {/* <p>Balance: {balance.toString()}</p> */}
 
-                <p>Contract Balance: {contract_balance.toString()}</p>
+                {/* <p>Contract Balance: {contract_balance.toString()}</p> */}
 
-                <p>Transaction Count: {transactionCount.toString()}</p>
+                {/* <p>Transaction Count: {transactionCount.toString()}</p> */}
 
-                <p>Logs: {logs.map((log) => log.transactionHash).join(", ")}</p>
             </div>
             <div>
                 <h2>NFT Metadata Lookup</h2>
